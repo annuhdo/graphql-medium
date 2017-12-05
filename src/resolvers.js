@@ -2,7 +2,7 @@ const { getMediumFeed } = require("./connection");
 
 const resolvers = {
   Query: {
-    medium: async (root, args) => {
+    Medium: async (root, args) => {
       const res = await getMediumFeed(args.username);
       return res;
     }

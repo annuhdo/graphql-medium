@@ -1,6 +1,6 @@
 const typeDefs = `
   type Query {
-    medium(username: String!): MediumType
+    Medium(username: String!): MediumType
   },
   type MediumType {
     user: UserType,

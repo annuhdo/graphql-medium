@@ -1,16 +1,35 @@
 # medium-feed-graphql 🚀
 
-A GraphQL wrapper for a user's Medium feed.
+A GraphQL wrapper for a user's Medium feed. [Hosted Deployment ▲](https://graphql-medium-gvahamywiv.now.sh/)
 ![GraphQL Playground](./graphql-screenshot.png)
 
 ## Features
-
-[Hosted Deployment ▲](https://graphql-medium-gvahamywiv.now.sh/)
 
 * Able to grab `user` and his or her latest `posts`.
 * Utilizes GraphQL with a single endpoint.
 * Data grabbed from
   [Medium's RSS Feed](https://help.medium.com/hc/en-us/articles/214874118-RSS-feeds).
+  
+## Query
+```
+query {
+  Medium(username: "annuhdo") {
+    user {
+      username
+      name
+      image
+      link
+    },
+    posts {
+      title
+      link
+      author
+      published
+      content
+    }
+  }
+}
+```
 
 ## Installation
 

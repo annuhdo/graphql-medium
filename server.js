@@ -1,17 +1,11 @@
-const express = require("express");
-const graphqlHTTP = require("express-graphql");
-const schema = require("./schema");
+const { GraphQLServer } = require("graphql-yoga");
+const { typeDefs } = require("./src/typeDefs");
+const { resolvers } = require("./src/resolvers");
 
-const app = express();
-
-app.use(
-  "/graphiql",
-  graphqlHTTP({
-    schema,
-    graphiql: true
-  })
+const options = {
+  port: 7778
+};
+const server = new GraphQLServer({ typeDefs, resolvers, options });
+server.start(() =>
+  console.log(`🚀 Server is running on port: ${options.port}`)
 );
-
-const PORT = 7777;
-app.listen(PORT);
-console.log(`🚀 Listening on port ${PORT}`);

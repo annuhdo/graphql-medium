@@ -11,9 +11,12 @@ A GraphQL wrapper for a user's Medium feed. [Hosted Deployment ▲](https://grap
   [Medium's RSS Feed](https://help.medium.com/hc/en-us/articles/214874118-RSS-feeds).
   
 ## Query
+
+The main query __Medium__ requires a username `String!` argument.
+
 ```
 query {
-  Medium(username: "annuhdo") {
+  Medium(username: MEDIUM_USERNAME_STRING) {
     user {
       username
       name

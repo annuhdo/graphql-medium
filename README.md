@@ -39,8 +39,8 @@ query {
 ### Initial setup
 
 ```
-$ git clone https://github.com/annuhdo/graphql-medium.git
-$ cd graphql-medium
+$ git clone https://github.com/annuhdo/medium-feed-graphql.git
+$ cd medium-feed-graphql
 
 $ yarn install
 ```

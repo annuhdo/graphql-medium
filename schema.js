@@ -74,8 +74,13 @@ const UserType = new GraphQLObjectType({
     name: {
       type: GraphQLString,
       resolve: (root, args) => {
-        const nameRes = root.rss.channel[0].title[0];
-        return nameRes;
+        const xmlName = root.rss.channel[0].title[0].split(" ");
+        const nameRes = [];
+        for (let i = 2; i < xmlName.length - 2; i++) {
+          nameRes.push(xmlName[i]);
+        }
+
+        return nameRes.join(" ");
       }
     },
     image: {

@@ -2,9 +2,10 @@ const { getMediumFeed } = require("./connection");
 
 const resolvers = {
   Query: {
-    Medium: async (root, args) => {
-      const res = await getMediumFeed(args.username);
-      return res;
+    Medium: async (root, args, context) => {
+      // const res = await getMediumFeed(args.username);
+      // return res;
+      return context.feedLoader.load(args.username);
     }
   },
   MediumType: {

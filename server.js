@@ -1,3 +1,4 @@
+require("babel-polyfill");
 const { GraphQLServer } = require("graphql-yoga");
 const { typeDefs } = require("./src/typeDefs");
 const { resolvers } = require("./src/resolvers");
